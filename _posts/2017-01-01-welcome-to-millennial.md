@@ -1,25 +1,19 @@
 ---
 layout: post
-title: "Welcome to Millennial!"
-author: "Paul Le"
+title: "Predictability of returns under habit-formation"
+author: "Rasmus M. Jensen"
 categories: documentation
-tags: [documentation,sample]
+tags: [Finance, computational economics]
 image: cuba-1.jpg
 ---
+## Additional content
+[MatLab replication tools](https://github.com/RasmusJensen96/Habit-Models-Advanced-Asset-Pricing): Replication guide available in the Readme of the repository.
 
-Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.
+## Hypothesis
+Empirical findings suggest that predictability of financial returns differs through business cycles; high predictability under recessions, low during expansions. Can we replicate this empirical finding in a structural asset pricing model?
 
-## Getting Started
-
-[Getting Started]({{ site.github.url }}{% post_url 2016-10-10-getting-started %}): getting started with installing Millennial, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
-
-## Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2016-09-09-text-formatting %})
-
-## Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%20question%20about%20Millennial;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/Millennial/issues/new).
+## Execution strategy
+Setup and estimate a structural consumption-based asset pricing model. Simulate a large number of stock/bond returns under different states of the economy. 
 
 ## More Jekyll!
 
