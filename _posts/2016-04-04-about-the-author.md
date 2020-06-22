@@ -2,7 +2,7 @@
 layout: post
 title: "About the Author"
 author: "Rasmus M. Jensen"
-categories: facts
+categories: about
 tags: [author]
 image: RasmusMJ.jpg
 ---
