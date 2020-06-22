@@ -12,14 +12,19 @@ image: cuba-1.jpg
 ## Hypothesis
 Empirical findings suggest that predictability of financial returns differs through business cycles; high predictability under recessions, low during expansions. Can we replicate this empirical finding in a structural asset pricing model?
 
-## Execution strategy
-Setup and estimate a structural consumption-based asset pricing model. Simulate a large number of stock/bond returns under different states of the economy. 
+## Executional strategy
+Setup and estimate a structural consumption-based asset pricing model. Simulate a large number of stock/bond returns under different states of the economy. Examine the properties of the simulated returns and compare them to returns of an empirical market portfolio.
 
-## More Jekyll!
+## Model of choice
+External habit model of Campbell & Cochrane 1999. Intuition of this model:
+  - Model agents (people in the model), chooses their consumption based on "usual" consumption, i.e. they are driven by habits.
+  - Implies: The marginal utility derived from consumption today are negatively affected by the level of consumption yesterday.
+  - Usual models: Utility only affected by absolute and not relative consumption.
 
-### Lagrange
+Relatively simple model analytically:
+$$ U(C_t, X_t) = \mathbb{E}\sum_{t=0}^{\infty}\delta^t \frac{(C_t-X_t)^{1-\gamma}-1}{1-\gamma}$$
+The utility of the simulated person is given by a utility function $$U_t$$, the variables entering the utility function are consumption $$C_t$$ and a habit-level $$X_t$$. The parameters of the utility function are a subjective discount factor $$\delta$$ (how much does the agent penalize future consumption), and a parameter of relative risk-aversion $$\gamma$$.
 
-Lagrange is a minimalist Jekyll blog theme that I built from scratch. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog.
 
 Feel free to check out <a href="https://lenpaul.github.io/Lagrange/" target="_blank">the demo</a>, where you’ll also find instructions on <a href="https://lenpaul.github.io/Lagrange/journal/getting-started.html">how to use install</a> and use the theme.
 
