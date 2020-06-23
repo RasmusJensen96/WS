@@ -37,4 +37,5 @@ The model parameters are calibrated using US data spanning 1950-2018.
     1. Steady state of the model (lower than 6.7% consumption growth)
     2. Matching the empirical and model-implied recession-duration (less than 4.2% percentage growth in consumption)
     3. Extreme situation (less than 2% growth in consumption)
-![Histogram of surplus consumption](/assets/img/DistributionS_t.jpg)
+
+![Histogram of surplus consumption](~/assets/img/DistributionS_t.jpg)
