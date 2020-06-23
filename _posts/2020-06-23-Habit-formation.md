@@ -21,32 +21,20 @@ External habit model of Campbell & Cochrane 1999. Intuition of this model:
   - Implies: The marginal utility derived from consumption today are negatively affected by the level of consumption yesterday.
 In usual models: Utility affected only by absolute and not relative consumption.
 
-A bit more mathematical intuition of the model:\n
-$$ U(C_t, X_t) = \mathbb{E}\sum_{t=0}^{\infty}\delta^t \frac{(C_t-X_t)^{1-\gamma}-1}{1-\gamma}$$\n
-The utility of the simulated person is given by a utility function $$U_t$$, the variables entering the utility function are consumption $$C_t$$ and a habit-level $$X_t$$. The parameters of the utility function are a subjective discount factor $$\delta$$ (how much does the agent penalize future consumption), and a parameter of relative risk-aversion $$\gamma$$.\n
-\n
-For a technical walkthrough of the model I refer to the paper.\n
-\n
+A bit more mathematical intuition of the model:
+
+$$ U(C_t, X_t) = \mathbb{E}\sum_{t=0}^{\infty}\delta^t \frac{(C_t-X_t)^{1-\gamma}-1}{1-\gamma}$$
+
+The utility of the simulated person is given by a utility function $$U_t$$, the variables entering the utility function are consumption $$C_t$$ and a habit-level $$X_t$$. The parameters of the utility function are a subjective discount factor $$\delta$$ (how much does the agent penalize future consumption), and a parameter of relative risk-aversion $$\gamma$$.
+
+For a technical walkthrough of the model I refer to the paper.
+
 The model parameters are calibrated using US data spanning 1950-2018.
 
 ## Results
 100,000 (8,332) months (years) worth of stock returns are simulated. Recessions are defined as "low" consumption relative to the habit-level, that is a slow growth of consumption. Three different "low" thresholds are defined as:
+
     1. Steady state of the model (lower than 6.7% consumption growth)
     2. Matching the empirical and model-implied recession-duration (less than 4.2% percentage growth in consumption)
     3. Extreme situation (less than 2% growth in consumption)
-![Histogram of surplus consumption](~/assets/img/DistributionS_t.eps)
-
-
-
-
-### Portfolio Jekyll Theme
-
-This is a Jekyll theme built using the [DevTips Starter Kit](http://devtipsstarterkit.com/) as a foundation for starting, and following closely the amazing tutorial by [Travis Neilson over at DevTips](https://www.youtube.com/watch?v=T6jKLsxbFg4&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P). The purpose of this theme is to provide a clean and simple website for your portfolio. Emphasis is placed on your projects, which are shown front and center on the home page.
-
-Everything that you will ever need to know about this Jekyll theme is included in [the repository](https://github.com/LeNPaul/portfolio-jekyll-theme), which you can also find in [the demo site](https://lenpaul.github.io/portfolio-jekyll-theme/).
-
-### Jekyll Starter Kit
-
-The Jekyll Starter Kit is a simple framework for starting your own Jekyll project using all of the best practices that I learned from building my other Jekyll themes.
-
-Feel free to check out <a href="https://github.com/LeNPaul/jekyll-starter-kit" target="_blank">the GitHub repository</a>, where you’ll also find instructions on how to use install and use the theme.
+![Histogram of surplus consumption](/assets/img/DistributionS_t.jpg)
