@@ -4,7 +4,7 @@ title: "Predictability of returns under habit-formation"
 author: "Rasmus M. Jensen"
 categories: Research
 tags: [Finance, computational economics]
-image: cuba-1.jpg
+image: HabitloopPH.jpeg
 ---
 ## Additional content
 [MatLab replication tools](https://github.com/RasmusJensen96/Habit-Models-Advanced-Asset-Pricing): Replication guide available in the Readme of the repository.
