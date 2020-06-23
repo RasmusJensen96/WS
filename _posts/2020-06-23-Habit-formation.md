@@ -39,3 +39,22 @@ The model parameters are calibrated using US data spanning 1950-2018.
     3. Extreme situation (less than 2% growth in consumption)
 
 ![Histogram of surplus consumption](../assets/img/DistributionS_t.jpeg)
+
+### Empirical regression
+
+![Empirical regression](../assets/img/EmpPDreg.jpeg)
+Emprically we see:
+1. 0.191 (0.015) intercept-term in recession (expansion) accounting for the equity premium.
+2. Negative (and small) but significant slope coefficient, accounting for negative relationship between price and dividend yield in recession (expansion).
+3. 4.42% explainability in recessions, whilst only 0.47 in expansions
+
+### Regression on data simulated from model
+![Simulated regression](../assets/img/SimPDreg.jpeg)
+From here follows the same pattern. However we are not able to match the low equity-premium under expansions, nor the very weak linear relationship low $$\beta$$-value.
+
+Decreasing the threshold to 2%:
+![Simulated regression LT](../assets/img/SimPDLTreg.jpeg)
+We see now how the model is behaving quite in line with what we expect.
+
+## Conclusion
+After re-calibrating the model of Campbell and Cochrane (1999) and simulating from the re-calibrated model, we find that the model is able to consistently generate returns with properties similar to returns observed in the real world. Returns generated from the model, exhibits predictability only during recessions. Furthermore, the worse the recession the higher predictability from the price/dividend ratio. This result extends to the dividend yield following the reciprocal link between the two. It must be noted that the linear relationship between segments of the price-dividend ratio and excess returns remains sizable even when the surplus consumption ratio is very high, this seems not to be the case in empirical stock returns, where the co- linearity vanishes in expansions.
