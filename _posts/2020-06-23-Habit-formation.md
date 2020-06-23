@@ -17,16 +17,27 @@ Setup and estimate a structural consumption-based asset pricing model. Simulate 
 
 ## Model of choice
 External habit model of Campbell & Cochrane 1999. Intuition of this model:
-  - Model agents (people in the model), chooses their consumption based on "usual" consumption, i.e. they are driven by habits.
+  - Model agents (people in the model), chooses their consumption relative to "usual" consumption, i.e. they are driven by habits.
   - Implies: The marginal utility derived from consumption today are negatively affected by the level of consumption yesterday.
-  - Usual models: Utility only affected by absolute and not relative consumption.
+In usual models: Utility affected only by absolute and not relative consumption.
 
-Relatively simple model analytically:
-$$ U(C_t, X_t) = \mathbb{E}\sum_{t=0}^{\infty}\delta^t \frac{(C_t-X_t)^{1-\gamma}-1}{1-\gamma}$$
-The utility of the simulated person is given by a utility function $$U_t$$, the variables entering the utility function are consumption $$C_t$$ and a habit-level $$X_t$$. The parameters of the utility function are a subjective discount factor $$\delta$$ (how much does the agent penalize future consumption), and a parameter of relative risk-aversion $$\gamma$$.
+A bit more mathematical intuition of the model:\n
+$$ U(C_t, X_t) = \mathbb{E}\sum_{t=0}^{\infty}\delta^t \frac{(C_t-X_t)^{1-\gamma}-1}{1-\gamma}$$\n
+The utility of the simulated person is given by a utility function $$U_t$$, the variables entering the utility function are consumption $$C_t$$ and a habit-level $$X_t$$. The parameters of the utility function are a subjective discount factor $$\delta$$ (how much does the agent penalize future consumption), and a parameter of relative risk-aversion $$\gamma$$.\n
+\n
+For a technical walkthrough of the model I refer to the paper.\n
+\n
+The model parameters are calibrated using US data spanning 1950-2018.
+
+## Results
+100,000 (8,332) months (years) worth of stock returns are simulated. Recessions are defined as "low" consumption relative to the habit-level, that is a slow growth of consumption. Three different "low" thresholds are defined as:
+    1. Steady state of the model (lower than 6.7% consumption growth)
+    2. Matching the empirical and model-implied recession-duration (less than 4.2% percentage growth in consumption)
+    3. Extreme situation (less than 2% growth in consumption)
+![Histogram of surplus consumption](~/assets/img/DistributionS_t.eps)
 
 
-Feel free to check out <a href="https://lenpaul.github.io/Lagrange/" target="_blank">the demo</a>, where you’ll also find instructions on <a href="https://lenpaul.github.io/Lagrange/journal/getting-started.html">how to use install</a> and use the theme.
+
 
 ### Portfolio Jekyll Theme
 
