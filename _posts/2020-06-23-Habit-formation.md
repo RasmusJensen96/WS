@@ -2,7 +2,7 @@
 layout: post
 title: "Predictability of returns under habit-formation"
 author: "Rasmus M. Jensen"
-categories: research
+categories: Research
 tags: [Finance, computational economics]
 image: cuba-1.jpg
 ---
