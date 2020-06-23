@@ -46,7 +46,7 @@ The model parameters are calibrated using US data spanning 1950-2018.
 Emprically we see:
 1. 0.191 (0.015) intercept-term in recession (expansion) accounting for the equity premium.
 2. Negative (and small) but significant slope coefficient, accounting for negative relationship between price and dividend yield in recession (expansion).
-3. 4.42% explainability in recessions, whilst only 0.47 in expansions
+3. 4.42% explainability in recessions, whilst only 0.47% in expansions
 
 ### Regression on data simulated from model
 ![Simulated regression](../assets/img/SimPDreg.jpeg)
