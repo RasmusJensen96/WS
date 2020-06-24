@@ -57,7 +57,7 @@ nDate = index(IXIC)[-1]
 fit = Estimate_GARCH(lr, nDate)
 fit$Name = "NASDAQ Composite"
 plot(fit)
-```
+``` 
 
 ![](../assets/img/GARCHVM.png)<!-- -->
 Consistent with our prior expectation, we see a huge volatility spike
@@ -98,4 +98,4 @@ This provides a pretty good idea about the idea of the fit, which
 seemlingly captures the movements in the VIX index pretty nicely. Small
 postive-skew sugggests that the Gamma-GAS-model tends to undervaluate
 the VIX-index by a small margin
-(\[1/N \sum_{i=1}^N y_t - \hat{y}_t = `mean(fit1$Observations-fit1$Filtered)`\]).
+(\[1/N \sum_{i=1}^N y_t - \hat{y}_t = 0.23\]).
