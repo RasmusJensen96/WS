@@ -14,7 +14,7 @@ During my spare-time I have been/am working on a volatilty-modelling
 plugin for R. The idea being that I am quite used to working in MatLab
 and thus wanted to improve my skills in R. I have made a simple
 Shiny-app showcasing some of the capabilities of the package:
-\[Shiny-app\]<https://www.shinyapps.io/admin/#/application/2488219>, the
+[Shiny-app]<https://www.shinyapps.io/admin/#/application/2488219>, the
 website/server should be running except if I am doing work on the
 application - Shiny is pretty cool.
 
@@ -60,6 +60,7 @@ plot(fit)
 ``` 
 
 ![](../assets/img/GARCHVM.png)<!-- -->
+
 Consistent with our prior expectation, we see a huge volatility spike
 during the financial crisis. Well, what does this imply intuitively?
 Increasing volatility, corresponds to a larger risk associated with
@@ -97,5 +98,4 @@ ggplot() + geom_histogram(aes(fit1$Observations-fit1$Filtered), color = rgb(0,0.
 This provides a pretty good idea about the idea of the fit, which
 seemlingly captures the movements in the VIX index pretty nicely. Small
 postive-skew sugggests that the Gamma-GAS-model tends to undervaluate
-the VIX-index by a small margin
-(\[1/N \sum_{i=1}^N y_t - \hat{y}_t = 0.23\]).
+the VIX-index by a small margin; $$ 1/N \\sum_{i=1}^N y_t - \\hat{y}_t = 0.23 $$).
