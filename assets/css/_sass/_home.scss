@@ -3,12 +3,12 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
-  "paragraph_front image_Morten_Front";
+  "paragraph_front image_rmj";
   grid-gap: 10px;
 padding-top: $header-thickness+10px;
 }
 
-.image_Morten_Front {
+.image_rmj {
   width: $phone-width;
   grid-area: image_rmj;
   background-image: url(../img/foto_rmj.png);
