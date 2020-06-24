@@ -20,13 +20,13 @@ application - Shiny is pretty cool.
 
 The package at the present moment contains three models the regular
 GARCH(1,1)-volatility-model and the less famous, but quite impressive
-generalized autoregressive score and multiplicative error models; GAS
+generalized autoregressive score and multiplicative error models for time-varying parameter modelling; GAS
 and MEM respectively. At the moment only Gaussian and Gamma marginals
 (error distributions) are supported. But the package does contain codes
 meant to supply additional error probability functions (Generalized
 error distribution (GED), t-dist).
 
-## Excersise
+## Exercise
 
 ``` r
 devtools::install_github("RasmusJensen96/VolatilityModelling")
