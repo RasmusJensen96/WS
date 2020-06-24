@@ -16,6 +16,33 @@ padding-top: $header-thickness+10px;
   background-repeat: no-repeat;
 }
 
+
+.paragraph_front {
+  padding-top: $header-thickness+50px;
+}
+.paragraph_front p {
+  font-size: 15px;
+  /* font-family: Avenir LT Std 35 Light; */
+  grid-area: paragraph_front;
+text-align: center;
+}
+
+.paragraph_front  H1 {
+  font-size: 76px;
+  /* font-family: Avenir LT Std 35 Light; */
+  grid-area: paragraph_front;
+text-align: center;
+}
+
+.paragraph_front  H6 {
+/* font-family: Avenir LT Std 35 Light; */
+  grid-area: paragraph_front;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+
 .featured-posts {
   height: 400px;
   margin: 5px 10px 10px;
