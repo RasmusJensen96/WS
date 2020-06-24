@@ -1,15 +1,9 @@
 ---
 title: "Volatility Modelling"
 author: "Rasmus M. Jensen"
-output:
-  md_document:
-    variant: gfm
-    preserve_yaml: TRUE
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../_posts") })
-date: "2020-06-24"
 layout: post
 categories: Research
+tags: [Finance, computational economics]
 image: GarchVP.png # for open graph protocol
 ---
 
