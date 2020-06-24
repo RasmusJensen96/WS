@@ -16,6 +16,7 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
+- {icon: 'linkedin', link: 'www.linkedin.com/in/rasmusmjensen'}
 - {icon: 'facebook', link: 'https://www.facebook.com/RasmusMJ96'}
 - {icon: 'envelope', link: 'mailto:l.RasmusJensen96@outlook.com'}
 - {icon: 'rss-square', link: 'feed.xml'}
