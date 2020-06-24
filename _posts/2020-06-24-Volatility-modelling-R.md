@@ -4,6 +4,7 @@ author: "Rasmus M. Jensen"
 date: "2020-06-24"
 layout: post
 categories: Research
+tags: [Finance, computational economics]
 image: GarchVP.png # for open graph protocol
 ---
 
