@@ -136,16 +136,7 @@ grid.arrange(p1,p2,p3,p4,p5,p6,p7, nrow = 3)
 
 ![](../assets/img/unnamed-chunk-6-1.png)<!-- -->
 ## The FAVAR
-$$
-\begin{bmatrix}
-F_t\\
-Y_t
-\end{bmatrix} = 
-\phi\left( L \right)\begin{bmatrix}
-F_{t-1}\\
-Y_{t-1}
-\end{bmatrix} + \varepsilon_t
-$$
+$$\begin{bmatrix}F_t\\ Y_t \end{bmatrix} = \phi\left( L \right)\begin{bmatrix} F_{t-1}\\ Y_{t-1} \end{bmatrix} + \varepsilon_t$$
 
 With the factors in hand we are ready to setup the VAR-model in observables and latent factors, firstly we define the
 vector of time series as our observable instruments $$Y_t$$, we use industrial production, consumer price index and the federal funds rate:
