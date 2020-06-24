@@ -22,12 +22,48 @@ invisible(lapply(req.packages, library, character.only = TRUE))
 ```
 
 ## Including Plots
-We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset of 128 time-series; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels,
-non-stationary.
+We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset of 128 time-series; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels a majority of the time-series, are non-stationary. To see this consider the plot of the series; Real personal income, industrial production index, consumer price index and the federal funds rate:
 
 ![](../assets/img/unnamed-chunk-2-1.png)<!-- -->
 Clearly non-stationary. Hence we write a simple function to transform
 the entire dataset at once:
+
+``` r 
+transformX <- function(x){
+y = x[,F]
+  for (i in 1:n) {
+  if (x[1,i] == 1) {       ## no Transformation/already stationary series
+    y[4:t,i] <- x[4:t,i]
+  }
+  
+  else  if (x[1,i] == 2) { ## First difference
+    y[4:t,i] <- x[4:t,i]-x[3:(t-1),i]
+  }
+  
+  else if (x[1,i] == 3) {  ## Second difference
+    y[4:t,i] <- x[4:t,i]-2*x[3:(t-1),i]+x[2:(t-2)]
+  }
+  
+  else if (x[1,i] == 4) {  ## Ln
+    y[4:t,i] <- log(x[4:t,i])
+  }
+  
+  else if (x[1,i] == 5) {  ## First difference of ln
+    y[4:t,i] <- log(x[4:t,i])-log(x[3:(t-1),i])
+  }
+  
+  else if (x[1,i] == 6) {  ## Second difference of ln
+    y[4:t,i] <- log(x[4:t,i])-2*log(x[3:(t-1),i])+log(x[2:(t-2),i])
+  }
+  
+  else {  ## First difference of percentage change
+    y[4:t,i] <- (x[4:t,i]-x[3:(t-1),i])/x[3:(t-1),i]-(x[3:(t-1),i]-
+                                                        x[2:(t-2),i])/x[2:(t-2),i]
+  } 
+}
+  return(y)
+}
+```
 
 Notice it takes only the dataframe, x, as an argument: the first column
 thus has to contain the transformation codes which it conviniently does:
@@ -54,7 +90,7 @@ sCX = imputePCA(sX, maxiter = 150)$completeObs
 colnames(sCX) = colnames(sX)
 ```
 
-To balance the variance and mean scaling. We normalize and center the
+The principal components estimator is highly sensitive to mean and cross-sectional heteroscedasticity, hence we normalize and center the
 data:
 
 ``` r
@@ -100,8 +136,19 @@ grid.arrange(p1,p2,p3,p4,p5,p6,p7, nrow = 3)
 
 ![](../assets/img/unnamed-chunk-6-1.png)<!-- -->
 ## The FAVAR
+$$
+\begin{bmatrix}
+F_t\\
+Y_t
+\end{bmatrix} = 
+\phi\left( L \right)\begin{bmatrix}
+F_{t-1}\\
+Y_{t-1}
+\end{bmatrix} + \varepsilon_t
+$$
+
 With the factors in hand we are ready to setup the VAR-model in observables and latent factors, firstly we define the
-vector of time series:
+vector of time series as our observable instruments $$Y_t$$, we use industrial production, consumer price index and the federal funds rate:
 
 ``` r
 colnames(sCCX) <- colnames(sX)
