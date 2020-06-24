@@ -10,7 +10,7 @@ knit: (function(inputFile, encoding) {
 date: "2020-06-23"
 layout: post
 categories: Research
-image: Big-Data.jpg # for open graph protocol
+image: Big-Data.png # for open graph protocol
 ---
 
 ## Packages
