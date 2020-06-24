@@ -10,7 +10,7 @@ knit: (function(inputFile, encoding) {
 date: "2020-06-23"
 layout: post
 categories: Research
-image: ../assets/img/Big-Data.jpg # for open graph protocol
+image: Big-Data.jpg # for open graph protocol
 ---
 
 ## Packages
@@ -22,7 +22,7 @@ invisible(lapply(req.packages, library, character.only = TRUE))
 ```
 
 ## Including Plots
-We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels,
+We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset of 128 time-series; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels,
 non-stationary.
 
 ![](../assets/img/unnamed-chunk-2-1.png)<!-- -->
