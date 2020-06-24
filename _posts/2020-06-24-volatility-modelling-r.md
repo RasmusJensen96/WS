@@ -14,7 +14,7 @@ During my spare-time I have been/am working on a volatilty-modelling
 plugin for R. The idea being that I am quite used to working in MatLab
 and thus wanted to improve my skills in R. I have made a simple
 Shiny-app showcasing some of the capabilities of the package:
-\[Shiny-app\]<https://www.shinyapps.io/admin/#/application/2488219>, the
+[link to Shiny-app](https://rasmusjensen96.shinyapps.io/VolatilityModelling/?_ga=2.104123520.102457602.1592830169-1709615181.1592830169), the
 website/server should be running except if I am doing work on the
 application - Shiny is pretty cool.
 
@@ -40,13 +40,6 @@ log-returns:
 
 ``` r
 IXIC  = getSymbols("^IXIC", auto.assign = F, from = "2007-01-01", to = "2011-01-01")
-```
-
-    ## Warning: 'indexClass<-' is deprecated.
-    ## Use 'tclass<-' instead.
-    ## See help("Deprecated") and help("xts-deprecated").
-
-``` r
 lr    = as.numeric((diff(log(IXIC$IXIC.Adjusted))*100)[-1])
 nDate = index(IXIC)[-1]
 ```
@@ -60,6 +53,7 @@ plot(fit)
 ```
 
 ![](../assets/img/GARCHVM.png)<!-- -->
+
 Consistent with our prior expectation, we see a huge volatility spike
 during the financial crisis. Well, what does this imply intuitively?
 Increasing volatility, corresponds to a larger risk associated with
@@ -85,6 +79,7 @@ ggplot() + geom_point(aes(x =  VIXDat, y = VIX, col = "Observed price")) +
 ```
 
 ![](../assets/img/GASVM.png)<!-- -->
+
 Well then the Gamma-GAS model seems to proviide a quite good fit for the
 conditional mean (predicted value). However how much off is the
 model?
@@ -94,8 +89,9 @@ ggplot() + geom_histogram(aes(fit1$Observations-fit1$Filtered), color = rgb(0,0.
 ```
 
 ![](../assets/img/HistVM.png)<!-- -->
+
 This provides a pretty good idea about the idea of the fit, which
 seemlingly captures the movements in the VIX index pretty nicely. Small
 postive-skew sugggests that the Gamma-GAS-model tends to undervaluate
 the VIX-index by a small margin
-(\[1/N \sum_{i=1}^N y_t - \hat{y}_t = `mean(fit1$Observations-fit1$Filtered)`\]).
+$$ 1/N \\sum_{i=1}^N y_t - \\hat{y}_t = 0.23 $$.
