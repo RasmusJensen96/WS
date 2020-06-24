@@ -93,7 +93,7 @@ model?
 ggplot() + geom_histogram(aes(fit1$Observations-fit1$Filtered), color = rgb(0,0.25,0), fill = rgb(0,0.35,0), binwidth = 0.75) + labs(x = "Prediction error", y = "Realizations", title = "Prediction error histogram", subtitle = "Series: VIX Volatility Index") + theme_bw()
 ```
 
-![](../assets/img/HistVM.png)<!-- -->
+![](../assets/img/HISTVM.png)<!-- -->
 This provides a pretty good idea about the idea of the fit, which
 seemlingly captures the movements in the VIX index pretty nicely. Small
 postive-skew sugggests that the Gamma-GAS-model tends to undervaluate
