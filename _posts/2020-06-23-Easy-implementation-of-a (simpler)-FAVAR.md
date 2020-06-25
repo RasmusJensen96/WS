@@ -13,7 +13,7 @@ categories: Research
 image: Big-Data.png # for open graph protocol
 ---
 ## Additional material:
-This post describes a very simplified version of the model I constructed and coded in my Masters thesis for a more technical and sophisticated model please refer to:
+This post describes a very simplified version of the model I constructed and coded in my Masters thesis for a technical review and construction of the model please refer to:
 
 [Masters thesis (pdf)](../assets/files/SFAVAR_Final.pdf)
 
