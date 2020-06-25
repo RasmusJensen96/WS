@@ -9,6 +9,8 @@ image: HabitloopPH.jpeg
 ## Additional content
 [MatLab replication tools](https://github.com/RasmusJensen96/Habit-Models-Advanced-Asset-Pricing): Replication guide available in the Readme of the repository.
 
+[Full article (pdf)](../assets/files/Habit_Final.pdf)
+
 ## Hypothesis
 Empirical findings suggest that predictability of financial returns differs through business cycles; high predictability under recessions, low during expansions. Can we replicate this empirical finding in a structural asset pricing model?
 
