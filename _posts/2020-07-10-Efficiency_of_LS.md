@@ -5,12 +5,12 @@ date: "2020-07-10"
 layout: post
 categories: Research
 tags: [computational economics, econometrics]
-image: LinearOLSCS1.PNG # for open graph protocol
+image: LinearOLSCS1.png # for open graph protocol
 ---
 
 ## Introduction
 
-Being a very simple linear fitting method the ordinary least-squares (OLS) estimator is quite popular. Both in time-dimension analysis; time-series analysis and in conventional cross-sectional analysis.
+Being a very simple linear fitting method the ordinary least-squares (OLS) estimator is quite popular, both in time-dimension analysis; time-series analysis and in conventional cross-sectional analysis.
 The benefits of the OLS-estimator are many; under the assumption of a linear Gaussian model the estimator holds a analytical solution, which in many cases eases the computational burden associated with estimation and inference.
 Secondly, under linear Gaussianity the analytical solution coincides with the maximum likelihood solution. This implies in turn that no other (paramatric) estimator are better than the OLS-estimator.
 Lastly, the estimator is known and utilized throughout all of academia, implying that, except in very scarce (and specific) cases, no editor is going to question the usage of the OLS-estimator.
@@ -21,6 +21,7 @@ But really how good is the OLS-estimator given the optimum of conditions? To exp
 [The app](https://rasmusjensen96.shinyapps.io/LeastSquaresEfficiency/) relies only on native (base) R-features and ggplot. The main-panel consists of two dynamic graphs.
 Firstly, a benchmark simulated data-set (the size of which is customizable by the user). If the user chooses the "Time-dimension" option, the simulated data consists of an autoregressive model of order 1 (AR(1)),
 $$ y_t = \beta y_{t-1} + \epsilon_t, \qquad \epsilon_t \sim \mathcal{N}\left( 0,1\right) $$
+
 
 ## GARCH(1,1)
 
