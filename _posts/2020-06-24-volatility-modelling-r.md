@@ -60,14 +60,11 @@ Increasing volatility, corresponds to a larger risk associated with
 investing. The so-called value-at-risk increases significantly when
 volatility increases, hence it of great importance to the investor to
 determine whether the probability of large returns, is worth the
-associated risk for large losses.
+associated risk of large losses.
 
 ## GAS(1,1)-model
 
-The GAS-model here is based on mean modelling, with time-varying
-parameters: we will attempt to model the VIX-volatility indicators
-conditional
-mean:
+The GAS-model here is a time-varying parameter mean-model: we will attempt to model the conditional mean of the VIX-volatility indicator
 
 ``` r
 VIX = getSymbols("^VIX", auto.assign = FALSE,from = "2007-01-01", to = "2011-01-01")
@@ -80,7 +77,7 @@ ggplot() + geom_point(aes(x =  VIXDat, y = VIX, col = "Observed price")) +
 
 ![](../assets/img/GASVM.png)<!-- -->
 
-Well then the Gamma-GAS model seems to proviide a quite good fit for the
+Well then the Gamma-GAS model seems to provide a quite good fit for the
 conditional mean (predicted value). However how much off is the
 model?
 
