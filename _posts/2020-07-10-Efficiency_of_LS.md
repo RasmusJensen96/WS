@@ -32,6 +32,16 @@ In this case I added an option to reduce or increase the noise through the slide
 
 The second panel shows a histogram and a kernel-density plot (probability-distribution approximation) of a Monte-Carlo simulation of a user-specified number of random simulations. For very small Monte-Carlo samples the density is poorly behaving, increasing the number of MC-replications it is evident the the Central Limit Theorem and Law of Large numbers works its magic. The mean of the approximate PDF is close to the true mean with the characteristic normal-bell shape around the mean (as it should). Increasing the sample size (N) further increases the precision of the slope estimates. 
 
-## Some graphs
+## Results/graphs
+
+![](../assets/img/LinearOLSCS2.png)<!-- -->
+![](../assets/img/LinearOLSCS3.png)<!-- -->
+![](../assets/img/LinearOLSCS4.png)<!-- -->
+![](../assets/img/LinearOLSTS1.png)<!-- -->
+![](../assets/img/LinearOLSTS2.png)<!-- -->
+![](../assets/img/LinearOLSUR2.png)<!-- -->
+![](../assets/img/LinearOLSNG2.png)<!-- -->
+![](../assets/img/LinearOLSNG1.png)<!-- -->
+
 
 
