@@ -19,11 +19,15 @@ But really how good is the OLS-estimator given the optimum of conditions? To exp
 
 ## The App
 [The app](https://rasmusjensen96.shinyapps.io/LeastSquaresEfficiency/) relies only on native (base) R-features and ggplot. The main-panel consists of two dynamic graphs.
-Firstly, a benchmark simulated data-set (the size of which is customizable by the user). If the user chooses the "Time-dimension" option, the simulated data consists of an autoregressive model of order 1 (AR(1)),
+Firstly, a benchmark simulated data-set (the size of which is customizable by the user). If the user chooses the "Time-dimension" option, the simulated data consists of an autoregressive model of order 1 (AR(1)):
+
 $$ y_t = \beta y_{t-1} + \epsilon_t, \qquad \epsilon_t \sim \mathcal{N}\left( 0,1\right) $$
+
 The correlation coefficient $$\beta$$ can be chosen by the user freely on the space spanning $$\left[-1;1\right]$$, in the time-dimension the AR(1) has a special case when $$\beta$$ is on the unit-circle (in our case -1 or 1), then the model is referred to as a random walk. In this case the OLS-estimator holds some undesirable properties.
 Should the user instead opt for the "Cross-sectional"-option the model is a simple bivariate linear regression on the form:
+
 $$ y_i = \beta x_i + \epsilon_i \qquad \epsilon_i \sim \mathcal{N}\left( 0,\sigma\right) $$
+
 In this case I added an option to reduce or increase the noise through the slider for $$\sigma$$. Reducing the error-standard deviation to 0 results in a perfect linear relationship between $$x$$ and $$y$$ and thus an $$R^2$$-value (coefficient of determination) of 1. On the other hand increasing the magnitude of the noise, decreases the $$R^2$$-value indefinitely (equivalent to decreasing the signal-to-noise ratio).
 
 The second panel shows a histogram and a kernel-density plot (probability-distribution approximation) of a Monte-Carlo simulation of a user-specified number of random simulations. For very small Monte-Carlo samples the density is poorly behaving, increasing the number of MC-replications it is evident the the Central Limit Theorem and Law of Large numbers works its magic. The mean of the approximate PDF is close to the true mean with the characteristic normal-bell shape around the mean (as it should). Increasing the sample size (N) further increases the precision of the slope estimates. 
