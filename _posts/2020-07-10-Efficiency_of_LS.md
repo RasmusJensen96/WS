@@ -21,53 +21,13 @@ But really how good is the OLS-estimator given the optimum of conditions? To exp
 [The app](https://rasmusjensen96.shinyapps.io/LeastSquaresEfficiency/) relies only on native (base) R-features and ggplot. The main-panel consists of two dynamic graphs.
 Firstly, a benchmark simulated data-set (the size of which is customizable by the user). If the user chooses the "Time-dimension" option, the simulated data consists of an autoregressive model of order 1 (AR(1)),
 $$ y_t = \beta y_{t-1} + \epsilon_t, \qquad \epsilon_t \sim \mathcal{N}\left( 0,1\right) $$
+The correlation coefficient $$\beta$$ can be chosen by the user freely on the space spanning $$\left[-1;1\right]$$, in the time-dimension the AR(1) has a special case when $$\beta$$ is on the unit-circle (in our case -1 or 1), then the model is referred to as a random walk. In this case the OLS-estimator holds some undesirable properties.
+Should the user instead opt for the "Cross-sectional"-option the model is a simple bivariate linear regression on the form:
+$$ y_i = \beta x_i + \epsilon_i \qquad \epsilon_i \sim \mathcal{N}\left( 0,\sigma\right) $$
+In this case I added an option to reduce or increase the noise through the slider for $$\sigma$$. Reducing the error-standard deviation to 0 results in a perfect linear relationship between $$x$$ and $$y$$ and thus an $$R^2$$-value (coefficient of determination) of 1. On the other hand increasing the magnitude of the noise, decreases the $$R^2$$-value indefinitely (equivalent to decreasing the signal-to-noise ratio).
+
+The second panel shows a histogram and a kernel-density plot (probability-distribution approximation) of a Monte-Carlo simulation of a user-specified number of random simulations. For very small Monte-Carlo samples the density is poorly behaving, increasing the number of MC-replications it is evident the the Central Limit Theorem and Law of Large numbers works its magic. The mean of the approximate PDF is close to the true mean with the characteristic normal-bell shape around the mean (as it should). Increasing the sample size (N) further increases the precision of the slope estimates. 
+
+## Some graphs
 
 
-## GARCH(1,1)
-
-``` r
-fit = Estimate_GARCH(lr, nDate)
-fit$Name = "NASDAQ Composite"
-plot(fit)
-```
-
-![](../assets/img/GARCHVM.png)<!-- -->
-
-Consistent with our prior expectation, we see a huge volatility spike
-during the financial crisis. Well, what does this imply intuitively?
-Increasing volatility, corresponds to a larger risk associated with
-investing. The so-called value-at-risk increases significantly when
-volatility increases, hence it of great importance to the investor to
-determine whether the probability of large returns, is worth the
-associated risk of large losses.
-
-## GAS(1,1)-model
-
-The GAS-model here is a time-varying parameter mean-model: we will attempt to model the conditional mean of the VIX-volatility indicator
-
-``` r
-VIX = getSymbols("^VIX", auto.assign = FALSE,from = "2007-01-01", to = "2011-01-01")
-VIXDat = index(VIX); VIX = as.numeric(VIX$VIX.Adjusted)
-fit1 = Estimate_Gamma_GAS(VIX, VIXDat, 100)
-fit1$Name = "VIX-volatility index"
-ggplot() + geom_point(aes(x =  VIXDat, y = VIX, col = "Observed price")) +
-  geom_line(aes(x = VIXDat, y = fit1$Filtered, col = "Conditional Mean")) + labs(x = "Date", title = "GAS-Gamma fit", subtitle = "Series: VIX Volatility Index", y = "VIX adjusted", col = " ") + theme_bw()
-```
-
-![](../assets/img/GASVM.png)<!-- -->
-
-Well then the Gamma-GAS model seems to provide a quite good fit for the
-conditional mean (predicted value). However how much off is the
-model?
-
-``` r
-ggplot() + geom_histogram(aes(fit1$Observations-fit1$Filtered), color = rgb(0,0.25,0), fill = rgb(0,0.35,0), binwidth = 0.75) + labs(x = "Prediction error", y = "Realizations", title = "Prediction error histogram", subtitle = "Series: VIX Volatility Index") + theme_bw()
-```
-
-![](../assets/img/HISTVM.png)<!-- -->
-
-This provides a pretty good idea about the idea of the fit, which
-seemlingly captures the movements in the VIX index pretty nicely. Small
-postive-skew sugggests that the Gamma-GAS-model tends to undervaluate
-the VIX-index by a small margin
-$$ 1/N \sum_{i=1}^N y_t - \hat{y}_t = 0.23 $$.
