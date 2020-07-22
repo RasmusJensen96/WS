@@ -9,7 +9,7 @@ padding-top: $header-thickness+10px;
 }
 
 .image_rmj {
-  width: $phone-width;
+  width: $phone-width+-15px;
   grid-area: image_rmj;
 background-image: url(../img/foto_rmj.png);
   background-size: cover;
