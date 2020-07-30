@@ -4,8 +4,8 @@
   grid-template-rows: 1fr;
   grid-template-areas:
   "paragraph_front image_rmj";
-  grid-gap: 50px;
-padding-top: $header-thickness+10px;
+  grid-gap: 35px;
+padding-top: $header-thickness+ 5px;
 }
 
 .image_rmj {
@@ -18,7 +18,7 @@ background-image: url(../img/foto_rmj.png);
 
 
 .paragraph_front {
-  padding-top: $header-thickness+15px;
+  padding-top: $header-thickness + 5px;
 }
 .paragraph_front p {
   font-size: 15px;
