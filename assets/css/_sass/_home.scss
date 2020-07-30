@@ -9,6 +9,7 @@ padding-top: $header-thickness+ 5px;
 }
 
 .image_rmj {
+  padding-top: $header-thickness+ 15px;
   width: $picture-width;
   grid-area: image_rmj;
 background-image: url(../img/foto_rmj.png);
@@ -18,7 +19,7 @@ background-image: url(../img/foto_rmj.png);
 
 
 .paragraph_front {
-  padding-top: $header-thickness + 5px;
+  padding-top: $header-thickness + 15px;
 }
 .paragraph_front p {
   font-size: 15px;
