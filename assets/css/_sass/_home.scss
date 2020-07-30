@@ -5,11 +5,11 @@
   grid-template-areas:
   "paragraph_front image_rmj";
   grid-gap: 35px;
-padding-top: $header-thickness+ 5px;
+padding-top: $header-thickness + 5px;
 }
 
 .image_rmj {
-  padding-top: $header-thickness+ 15px;
+  padding-top: $header-thickness + 15px;
   width: $picture-width;
   grid-area: image_rmj;
 background-image: url(../img/foto_rmj.png);
