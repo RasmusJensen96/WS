@@ -8,18 +8,16 @@
 padding-top: $header-thickness + 5px;
 }
 
-.image_rmj:before
-    {
-        display:block;
-        content:'';
-        position:absolute;
-        width:100%;
-        height:100%;
-        -moz-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-        -webkit-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-        box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,1);
-    }
+
+.image_rmj:before { border: 8px solid #000; 
+  -moz-border-bottom-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2; 
+  -moz-border-top-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
+  -moz-border-left-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
+  -moz-border-right-colors:#897048 #917953  #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
+}
+
 .image_rmj {
+  box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
   padding-top: $header-thickness + 15px;
   width: $picture-width;
   grid-area: image_rmj;
