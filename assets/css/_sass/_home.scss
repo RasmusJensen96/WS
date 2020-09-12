@@ -8,6 +8,10 @@
 padding-top: $header-thickness + 5px;
 }
 
+.image_rmj:hover {
+border: none;
+box-shadow: 0 0 15px black inset;
+}
 .image_rmj {
   padding-top: $header-thickness + 15px;
   width: $picture-width;
