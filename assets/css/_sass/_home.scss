@@ -8,16 +8,7 @@
 padding-top: $header-thickness + 5px;
 }
 
-
-.image_rmj:before { border: 8px solid #000; 
-  -moz-border-bottom-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2; 
-  -moz-border-top-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
-  -moz-border-left-colors:#897048 #917953 #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
-  -moz-border-right-colors:#897048 #917953  #a18a66 #b6a488 #c5b59b #d4c5ae #e2d6c4 #eae1d2;
-}
-
 .image_rmj {
-  box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
   padding-top: $header-thickness + 15px;
   width: $picture-width;
   grid-area: image_rmj;
