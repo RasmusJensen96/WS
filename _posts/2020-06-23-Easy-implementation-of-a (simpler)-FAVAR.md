@@ -28,7 +28,7 @@ invisible(lapply(req.packages, library, character.only = TRUE))
 ```
 
 ## Including Plots
-We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset of 128 time-series; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels a majority of the time-series, are non-stationary. To see this consider the plot of the series; Real personal income, industrial production index, consumer price index and the federal funds rate:
+We use the FRED-md dataset of McCracken & Ng (2015), as it is a readily available and quite diverse dataset of 128 time-series; suitable for big-data analysis [Dataset link](https://research.stlouisfed.org/econ/mccracken/fred-databases/). From the FRED-md database a MatLab companion is available, for transforming the data, however as the data here is all in levels a majority of the time-series, are non-stationary. To see this consider the plot of the series; Real personal income, industrial production index, unemployment rate and the federal funds rate:
 
 ![](../assets/img/unnamed-chunk-2-1.png)<!-- -->
 Clearly non-stationary. Hence we write a simple function to transform
